@@ -6,5 +6,4 @@ public class AddService
     {
         return operands.Sum();
     }
-    
 }

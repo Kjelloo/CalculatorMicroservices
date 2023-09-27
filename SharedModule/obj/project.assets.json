@@ -1081,11 +1081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Helpers\\Helpers.csproj",
-      "projectName": "Helpers",
-      "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Helpers\\Helpers.csproj",
+      "projectUniqueName": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj",
+      "projectName": "SharedModule",
+      "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj",
       "packagesPath": "C:\\Users\\kjell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Helpers\\obj\\",
+      "outputPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kjell\\AppData\\Roaming\\NuGet\\NuGet.Config"

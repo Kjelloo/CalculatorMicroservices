@@ -14,8 +14,10 @@
       </Content>
     </ItemGroup>
 
+
+
     <ItemGroup>
-      <ProjectReference Include="..\Helpers\Helpers.csproj" />
+      <ProjectReference Include="..\SharedModule\SharedModule.csproj" />
     </ItemGroup>
 
 </Project>

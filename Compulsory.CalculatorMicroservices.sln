@@ -4,9 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionService", "Addition
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtractionService", "SubtractionService\SubtractionService.csproj", "{74B95F5B-B8C1-40C8-8C81-28C75B2A1994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{BDCA1589-437F-4279-B7EB-33CB40EFC3DB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationHistoryService", "CalculationHistoryService\CalculationHistoryService.csproj", "{7788829E-FFAF-413C-883E-2F658CA76598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModule", "SharedModule\SharedModule.csproj", "{91C31EFA-22CB-4AEC-BF56-406543C0EEAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,13 +22,13 @@ Global
 		{74B95F5B-B8C1-40C8-8C81-28C75B2A1994}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74B95F5B-B8C1-40C8-8C81-28C75B2A1994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74B95F5B-B8C1-40C8-8C81-28C75B2A1994}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDCA1589-437F-4279-B7EB-33CB40EFC3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDCA1589-437F-4279-B7EB-33CB40EFC3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDCA1589-437F-4279-B7EB-33CB40EFC3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDCA1589-437F-4279-B7EB-33CB40EFC3DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7788829E-FFAF-413C-883E-2F658CA76598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7788829E-FFAF-413C-883E-2F658CA76598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7788829E-FFAF-413C-883E-2F658CA76598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7788829E-FFAF-413C-883E-2F658CA76598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C31EFA-22CB-4AEC-BF56-406543C0EEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C31EFA-22CB-4AEC-BF56-406543C0EEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C31EFA-22CB-4AEC-BF56-406543C0EEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C31EFA-22CB-4AEC-BF56-406543C0EEAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

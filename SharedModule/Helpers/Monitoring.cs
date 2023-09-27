@@ -6,7 +6,7 @@ using OpenTelemetry.Trace;
 using Serilog;
 using Serilog.Enrichers.Span;
 
-namespace Monitoring;
+namespace SharedModule.Helpers;
 
 public class Monitoring
 {

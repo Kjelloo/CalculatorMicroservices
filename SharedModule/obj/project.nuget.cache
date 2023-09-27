@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ItuTDQccxdMjrhT1ErWOaueJdUGX60346z/ik6pHjEG1U4MUkudEr2ir6ubd3pYUlahBHcs8EiWBzA5BNgSXbQ==",
+  "dgSpecHash": "bXF2nJmynq7JujUdWvkvcQ/uzmNqk+mgetso7zLcMI1kq1InhfyDxOAz+RSY6VSn3Zr+RGUC+SWNkn70v+7ElQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Helpers\\Helpers.csproj",
+  "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjell\\.nuget\\packages\\easynetq\\7.5.5\\easynetq.7.5.5.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.0\\microsoft.extensions.configuration.3.1.0.nupkg.sha512",

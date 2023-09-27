@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using EasyNetQ;
 using OpenTelemetry.Context.Propagation;
+using SharedModule.Helpers;
 
 namespace AdditionService;
 
-using Monitoring;
 
 public static class Program
 {
@@ -20,13 +20,13 @@ public static class Program
         {
             var subscriptionResult = bus.PubSub.SubscribeAsync<AdditionEvent>("AS", e =>
             {
-                var parentContext = propagator.Extract(default, e.Headers, (r, key) =>
-                {
-                    return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!);
-                });
+                // Extract parent context from event headers
+                var parentContext = PropagationContext(propagator, e);
                 
                 using var activity =
                     Monitoring.ActivitySource.StartActivity("AdditionService", ActivityKind.Consumer, parentContext.ActivityContext);
+                
+                
                 
                 // TODO: Send subtract result to calculation history service
                 subtractionService.Add(e.Operands);
@@ -39,5 +39,12 @@ public static class Program
         }
 
         while (true) Thread.Sleep(5000);
+    }
+
+    private static PropagationContext PropagationContext(TraceContextPropagator propagator, AdditionEvent e)
+    {
+        var parentContext = propagator.Extract(default, e.Headers,
+            (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
+        return parentContext;
     }
 }

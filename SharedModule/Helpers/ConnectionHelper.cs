@@ -1,6 +1,6 @@
 ﻿using EasyNetQ;
 
-namespace Monitoring;
+namespace SharedModule.Helpers;
 
 public class ConnectionHelper
 {
