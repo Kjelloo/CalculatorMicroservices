@@ -17,7 +17,11 @@
 
 
     <ItemGroup>
+      <ProjectReference Include="..\Monitoring\Monitoring.csproj" />
       <ProjectReference Include="..\SharedModule\SharedModule.csproj" />
     </ItemGroup>
+
+
+
 
 </Project>

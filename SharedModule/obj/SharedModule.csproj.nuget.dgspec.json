@@ -41,34 +41,6 @@
             "EasyNetQ": {
               "target": "Package",
               "version": "[7.5.5, )"
-            },
-            "OpenTelemetry": {
-              "target": "Package",
-              "version": "[1.6.0, )"
-            },
-            "OpenTelemetry.Exporter.Console": {
-              "target": "Package",
-              "version": "[1.6.0, )"
-            },
-            "OpenTelemetry.Exporter.Zipkin": {
-              "target": "Package",
-              "version": "[1.6.0, )"
-            },
-            "Serilog": {
-              "target": "Package",
-              "version": "[3.0.1, )"
-            },
-            "Serilog.Enrichers.Span": {
-              "target": "Package",
-              "version": "[3.1.0, )"
-            },
-            "Serilog.Sinks.Console": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "Serilog.Sinks.Seq": {
-              "target": "Package",
-              "version": "[5.2.2, )"
             }
           },
           "imports": [

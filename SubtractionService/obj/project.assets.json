@@ -476,18 +476,31 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "SharedModule/1.0.0": {
+      "Monitoring/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "EasyNetQ": "7.5.5",
           "OpenTelemetry": "1.6.0",
+          "OpenTelemetry.Api": "1.6.0",
           "OpenTelemetry.Exporter.Console": "1.6.0",
           "OpenTelemetry.Exporter.Zipkin": "1.6.0",
           "Serilog": "3.0.1",
           "Serilog.Enrichers.Span": "3.1.0",
           "Serilog.Sinks.Console": "4.1.0",
           "Serilog.Sinks.Seq": "5.2.2"
+        },
+        "compile": {
+          "bin/placeholder/Monitoring.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Monitoring.dll": {}
+        }
+      },
+      "SharedModule/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "EasyNetQ": "7.5.5"
         },
         "compile": {
           "bin/placeholder/SharedModule.dll": {}
@@ -1082,6 +1095,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Monitoring/1.0.0": {
+      "type": "project",
+      "path": "../Monitoring/Monitoring.csproj",
+      "msbuildProject": "../Monitoring/Monitoring.csproj"
+    },
     "SharedModule/1.0.0": {
       "type": "project",
       "path": "../SharedModule/SharedModule.csproj",
@@ -1090,6 +1108,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Monitoring >= 1.0.0",
       "SharedModule >= 1.0.0"
     ]
   },
@@ -1118,6 +1137,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Monitoring\\Monitoring.csproj": {
+              "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Monitoring\\Monitoring.csproj"
+            },
             "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj": {
               "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj"
             }

@@ -1,9 +1,13 @@
-﻿namespace SubtractionService;
+﻿using Serilog;
+
+namespace SubtractionService;
 
 public class SubtractService
 {
     public decimal Subtract(IEnumerable<decimal> operands)
     {
-        return operands.Aggregate((total, next) => total - next);
+        var result = operands.Aggregate((total, next) => total - next);
+        Log.Logger.Debug("Finished subtraction with result {Result}", result);
+        return result;
     }
 }
