@@ -1,0 +1,24 @@
+﻿version: '3.4'
+
+services:
+  additionservice:
+    image: ${DOCKER_REGISTRY-}addition-service
+    build:
+      context: .
+      dockerfile: AdditionService/Dockerfile
+
+  calculationHistoryApi:
+    image: ${DOCKER_REGISTRY-}calculation-history-api
+    build:
+      context: .
+      dockerfile: CalculationHistoryApi/Dockerfile
+  subtractionservice:
+    image: ${DOCKER_REGISTRY-}subtraction-service
+    build:
+      context: .
+      dockerfile: SubtractionService/Dockerfile
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15673:15672"

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NX3NM/QPlv/X5ubLXF8pKsb6biTz2sW9RGBIoNs7KyAZ/iCdFFkX6Mq6Wj8okcvw7DMweNlh7+UqtNzJ1bGjSQ==",
+  "dgSpecHash": "USUWNFTZ0i6CioAFAdaRkG2U5VqCYMeEMH/WraVBQcpmYIJBploh3Zv/APygfjl3UFVj6IA0tDGjinB8iTxRfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SubtractionService\\SubtractionService.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\3.1.0\\microsoft.extensions.options.configurationextensions.3.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry\\1.6.0\\opentelemetry.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.api\\1.6.0\\opentelemetry.api.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.api.providerbuilderextensions\\1.6.0\\opentelemetry.api.providerbuilderextensions.1.6.0.nupkg.sha512",

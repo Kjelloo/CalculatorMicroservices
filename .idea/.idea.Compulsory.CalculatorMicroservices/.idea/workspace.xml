@@ -13,83 +13,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ea0d16d-9d36-465e-9a8f-49a0ffc404f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/CalculationHistoryApi.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Database/DbInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Database/IDbInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/Infrastructure/MessageListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/CalculationHistoryApi.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Monitoring/Monitoring.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SharedModule/Events/AdditionReceiveResultEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SharedModule/Events/SubtractionReceiveResultEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compulsory.CalculatorMicroservices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compulsory.CalculatorMicroservices/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/AddService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/AddService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/AdditionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/Events/AdditionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/AdditionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/AdditionService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/obj/AdditionService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/AdditionService.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/CalculationHistoryService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Data/CalculationHistoryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Database/CalculationHistoryContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Data/CalculationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Database/CalculationRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Data/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Database/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Data/Models/Calculation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Models/Calculation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Data/Models/Operators.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Models/Operators.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/CalculationHistoryService.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/CalculationHistoryService.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/CalculationHistoryApi.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/CalculationHistoryService.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/CalculationHistoryApi.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/CalculationHistoryService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/CalculationHistoryService.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/CalculationHistoryService.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/CalculationHistoryService.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/CalculationHistoryService.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/Debug/net7.0/CalculationHistoryService.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/project.packagespec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/rider.project.model.nuget.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryService/obj/rider.project.restore.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compulsory.CalculatorMicroservices.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Compulsory.CalculatorMicroservices.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/Events/AdditionEventDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/Events/CalculationEventDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/Events/SubtractionEventDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/Helpers/Monitoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Monitoring/MonitoringService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/SharedModule.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/SharedModule.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/Debug/net7.0/SharedModule.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/Debug/net7.0/SharedModule.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/Debug/net7.0/SharedModule.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/Debug/net7.0/SharedModule.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/SharedModule.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/SharedModule.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monitoring/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Monitoring/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SharedModule/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedModule/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModule/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/SubtractService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/SubtractService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/SubtractionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/Events/SubtractionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/SubtractionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/SubtractionService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/SubtractionService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/SubtractionService.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,34 +48,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;GitIgnore&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "yaml",
+      "GitIgnore"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\kjell\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\kjell\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\kjell\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\kjell\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\kjell\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\kjell\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
-  <component name="RunManager" selected=".NET Project.AdditionService">
+}]]></component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="AdditionService" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/AdditionService/bin/Debug/net7.0/AdditionService.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AdditionService/bin/Debug/net7.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -155,33 +86,15 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="CalculationHistoryService" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CalculationHistory/CalculationHistory.csproj" />
-      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
-      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
-      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net7.0" />
       <method v="2">
         <option name="Build" />
       </method>
     </configuration>
     <configuration name="SubtractionService" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SubtractionService/bin/Debug/net7.0/SubtractionService.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SubtractionService/bin/Debug/net7.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -191,7 +104,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net7.0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -246,7 +159,7 @@
         <settings>
           <option name="imageTag" value="additionservice" />
           <option name="containerName" value="additionservice" />
-          <option name="contextFolderPath" value="C:\Users\kjell\Documents\Programming\School\DLS\Compulsories\Compulsory.CalculatorMicroservices" />
+          <option name="contextFolderPath" value="." />
           <option name="sourceFilePath" value="AdditionService/Dockerfile" />
         </settings>
       </deployment>
@@ -273,24 +186,12 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
-    <configuration name="CalculationHistoryService/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="calculationhistoryservice" />
-          <option name="containerName" value="calculationhistoryservice" />
-          <option name="contextFolderPath" value="C:\Users\kjell\Documents\Programming\School\DLS\Compulsories\Compulsory.CalculatorMicroservices" />
-          <option name="sourceFilePath" value="CalculationHistoryService/Dockerfile" />
-        </settings>
-      </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="SubtractionService/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
           <option name="imageTag" value="subtractionservice" />
           <option name="containerName" value="subtractionservice" />
-          <option name="contextFolderPath" value="C:\Users\kjell\Documents\Programming\School\DLS\Compulsories\Compulsory.CalculatorMicroservices" />
+          <option name="contextFolderPath" value="." />
           <option name="sourceFilePath" value="SubtractionService/Dockerfile" />
         </settings>
       </deployment>
@@ -304,6 +205,31 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.CalculationHistoryApi: http" />
+      <item itemvalue=".NET Launch Settings Profile.CalculationHistoryApi: https" />
+      <item itemvalue=".NET Launch Settings Profile.CalculationHistoryApi: IIS Express" />
+      <item itemvalue=".NET Project.AdditionService" />
+      <item itemvalue=".NET Project.SubtractionService" />
+      <item itemvalue="Docker.AdditionService/Dockerfile" />
+      <item itemvalue="Docker.CalculationHistoryApi/Dockerfile" />
+      <item itemvalue="Docker.SubtractionService/Dockerfile" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -316,7 +242,10 @@
       <workItem from="1695763322693" duration="2030000" />
       <workItem from="1695765362638" duration="2838000" />
       <workItem from="1695852723135" duration="390000" />
-      <workItem from="1695853177610" duration="6041000" />
+      <workItem from="1695853177610" duration="6156000" />
+      <workItem from="1696231935852" duration="8000" />
+      <workItem from="1696235277609" duration="610000" />
+      <workItem from="1696334073094" duration="1739000" />
     </task>
     <task id="LOCAL-00001" summary="Ignore files">
       <option name="closed" value="true" />
