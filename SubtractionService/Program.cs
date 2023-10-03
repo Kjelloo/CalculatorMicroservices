@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using EasyNetQ;
-using Events;
 using Monitoring;
 using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
-using SharedModule.Helpers;
+using SharedModels.Events;
+using SharedModels.Helpers;
 using SubtractionService.Events;
 
 namespace SubtractionService;
@@ -15,13 +16,11 @@ public static class Program
     {
         var subtractionService = new SubtractService();
         var propagator = new TraceContextPropagator();
+        var spinLock = new object();
         
-        var connectionEstablished = false;
-        
-        using var bus = ConnectionHelper.GetRMQConnection();
-        while (!connectionEstablished)
+        using (var bus = ConnectionHelper.GetRMQConnection())
         {
-            var subscriptionResult = bus.PubSub.SubscribeAsync<SubtractionEvent>("Subtraction.HandleCalculation", e =>
+            bus.PubSub.SubscribeAsync<SubtractionEvent>("subtraction.handleCalculation", e =>
             {
                 var parentContext = ExtractData(propagator, e);
                 Baggage.Current = parentContext.Baggage;
@@ -34,21 +33,20 @@ public static class Program
                     {
                         Result = subtractionService.Subtract(e.Operands)
                     };
-                    
+
                     var activityContext = activity?.Context ?? Activity.Current?.Context ?? default;
-                    
+
                     InjectData(propagator, activityContext, result);
 
                     bus.PubSub.PublishAsync(result);
                 }
-            }).AsTask();
-            
-            await subscriptionResult.WaitAsync(CancellationToken.None);
-            connectionEstablished = subscriptionResult.Status == TaskStatus.RanToCompletion;
-            if (!connectionEstablished) Thread.Sleep(1000);
-        }
+            });
 
-        while (true) Thread.Sleep(5000);
+            lock (spinLock)
+            {
+                Monitor.Wait(spinLock);
+            }
+        }
     }
 
     private static void InjectData(TraceContextPropagator propagator, ActivityContext activityContext,

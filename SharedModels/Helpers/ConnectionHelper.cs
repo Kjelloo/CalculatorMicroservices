@@ -1,6 +1,6 @@
 ﻿using EasyNetQ;
 
-namespace SharedModule.Helpers;
+namespace SharedModels.Helpers;
 
 public class ConnectionHelper
 {

@@ -1,6 +1,4 @@
-﻿using SharedModule.Models;
-
-namespace Events;
+﻿namespace SharedModels.Events;
 
 public class SubtractionReceiveResultEvent
 {

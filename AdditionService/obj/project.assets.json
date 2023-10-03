@@ -509,17 +509,17 @@
           "bin/placeholder/Monitoring.dll": {}
         }
       },
-      "SharedModule/1.0.0": {
+      "SharedModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "EasyNetQ": "7.5.5"
         },
         "compile": {
-          "bin/placeholder/SharedModule.dll": {}
+          "bin/placeholder/SharedModels.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SharedModule.dll": {}
+          "bin/placeholder/SharedModels.dll": {}
         }
       }
     }
@@ -1143,17 +1143,17 @@
       "path": "../Monitoring/Monitoring.csproj",
       "msbuildProject": "../Monitoring/Monitoring.csproj"
     },
-    "SharedModule/1.0.0": {
+    "SharedModels/1.0.0": {
       "type": "project",
-      "path": "../SharedModule/SharedModule.csproj",
-      "msbuildProject": "../SharedModule/SharedModule.csproj"
+      "path": "../SharedModels/SharedModels.csproj",
+      "msbuildProject": "../SharedModels/SharedModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Monitoring >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
-      "SharedModule >= 1.0.0"
+      "SharedModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1184,8 +1184,8 @@
             "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Monitoring\\Monitoring.csproj": {
               "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Monitoring\\Monitoring.csproj"
             },
-            "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj": {
-              "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModule\\SharedModule.csproj"
+            "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModels\\SharedModels.csproj": {
+              "projectPath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SharedModels\\SharedModels.csproj"
             }
           }
         }

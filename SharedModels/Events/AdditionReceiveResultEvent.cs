@@ -1,4 +1,4 @@
-﻿namespace Events;
+﻿namespace SharedModels.Events;
 
 public class AdditionReceiveResultEvent
 {

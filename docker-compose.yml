@@ -1,4 +1,4 @@
-﻿version: '3.4'
+﻿version: '3.7'
 
 services:
   additionservice:
@@ -6,7 +6,6 @@ services:
     build:
       context: .
       dockerfile: AdditionService/Dockerfile
-
   calculationHistoryApi:
     image: ${DOCKER_REGISTRY-}calculation-history-api
     build:
@@ -22,3 +21,22 @@ services:
     image: rabbitmq:3-management
     ports:
       - "15673:15672"
+    volumes:
+      - rps_rmq_data:/var/lib/rabbitmq
+  seq:
+    image: datalust/seq
+    ports:
+      - 5341:5341
+      - 5342:80
+    volumes:
+        - rps_seq_data:/data
+    environment:
+        - ACCEPT_EULA=Y
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+  
+volumes: 
+    rps_seq_data:
+    rps_rmq_data:

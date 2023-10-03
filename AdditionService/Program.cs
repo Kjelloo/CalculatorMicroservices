@@ -1,12 +1,11 @@
 ﻿using System.Diagnostics;
 using AdditionService.Events;
 using EasyNetQ;
-using Events;
 using Monitoring;
 using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
-using SharedModule.Helpers;
-using static Monitoring.MonitoringService;
+using SharedModels.Events;
+using SharedModels.Helpers;
 
 namespace AdditionService;
 
@@ -16,13 +15,11 @@ public static class Program
     {
         var subtractionService = new AddService();
         var propagator = new TraceContextPropagator();
+        var spinLock = new object();
         
-        var connectionEstablished = false;
-        
-        using var bus = ConnectionHelper.GetRMQConnection();
-        while (!connectionEstablished)
+        using (var bus = ConnectionHelper.GetRMQConnection())
         {
-            var subscriptionResult = bus.PubSub.SubscribeAsync<AdditionEvent>("Addition.HandleCalculation", e =>
+            bus.PubSub.SubscribeAsync<AdditionEvent>("Addition.HandleCalculation", e =>
             {
                 var parentContext = ExtractData(propagator, e);
                 Baggage.Current = parentContext.Baggage;
@@ -37,19 +34,18 @@ public static class Program
                     };
 
                     var activityContext = activity?.Context ?? Activity.Current?.Context ?? default;
-                
+
                     InjectData(propagator, activityContext, result);
 
                     bus.PubSub.PublishAsync(result);
                 }
-            }).AsTask();
-            
-            await subscriptionResult.WaitAsync(CancellationToken.None);
-            connectionEstablished = subscriptionResult.Status == TaskStatus.RanToCompletion;
-            if (!connectionEstablished) Thread.Sleep(1000);
-        }
+            });
 
-        while (true) Thread.Sleep(5000);
+            lock (spinLock)
+            {
+                Monitor.Wait(spinLock);
+            }
+        }
     }
 
     private static void InjectData(TraceContextPropagator propagator, ActivityContext activityContext,
