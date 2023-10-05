@@ -1,6 +1,6 @@
 using CalculationHistoryApi.Data.Database;
 using CalculationHistoryApi.Infrastructure;
-using CalculationHistoryService.Data.Models;
+using CalculationHistoryApi.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +25,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var dbContext = services.GetService<CalculationHistoryContext>();
+    var dbInitializer = services.GetService<IDbInitializer>();
+    dbInitializer.Initialize(dbContext);
 }
 
 // Start message listener in a separate thread.

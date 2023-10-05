@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5dk++57ovnPO67oA8L7eptGfJmwPD0J0PdIwFjAm1EIIpsbKouziSL7NfJ7+pO+s+ZhvzdFbZgtkdrTXe7DQqw==",
+  "dgSpecHash": "ito3y5HYM7y/RwOI+2lxNKvS1sPwIa/ANlWFLHfdwt9marFP8f1xeEri+el6fzjsnNyb+mBa/8Y45v9COLe7hA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SubtractionService\\SubtractionService.csproj",
   "expectedPackageFiles": [
@@ -29,7 +29,7 @@
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.periodicbatching\\3.1.0\\serilog.sinks.periodicbatching.3.1.0.nupkg.sha512",
-    "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.seq\\5.2.2\\serilog.sinks.seq.5.2.2.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.seq\\5.2.3\\serilog.sinks.seq.5.2.3.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",

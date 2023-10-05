@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hJcOzHo5tki7fv1DCayMK8UkNY4O0U0WZxwFkrv2pUHw5NrMeo+SaJdZXenayy3yMnq3Cu+VJbUj24CyYZXfOg==",
+  "dgSpecHash": "M8oZgtksiN5S4xDlDtUFklDf0wSbi5B+FxGwRPA8zeJw86q1Vi4LtJj+061ygrY+pZ8MQLBdfg/+N8izqwEHlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\Monitoring\\Monitoring.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\3.1.0\\microsoft.extensions.options.configurationextensions.3.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry\\1.6.0\\opentelemetry.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.api\\1.6.0\\opentelemetry.api.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.api.providerbuilderextensions\\1.6.0\\opentelemetry.api.providerbuilderextensions.1.6.0.nupkg.sha512",
@@ -26,7 +27,7 @@
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.periodicbatching\\3.1.0\\serilog.sinks.periodicbatching.3.1.0.nupkg.sha512",
-    "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.seq\\5.2.2\\serilog.sinks.seq.5.2.2.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.seq\\5.2.3\\serilog.sinks.seq.5.2.3.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"

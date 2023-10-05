@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using CalculationHistoryApi.Data.Database;
-using CalculationHistoryService.Data.Models;
+using CalculationHistoryApi.Data.Models;
 using EasyNetQ;
 using Monitoring;
 using OpenTelemetry;
@@ -14,17 +14,20 @@ namespace CalculationHistoryApi.Infrastructure;
 public class MessageListener
 {
     IServiceProvider provider;
-    private TraceContextPropagator propagator;
+    private readonly TraceContextPropagator _propagator;
     IBus bus;
     
     public MessageListener(IServiceProvider provider)
     {
+        _propagator = new TraceContextPropagator();
         this.provider = provider;
     }
     
     public void Start()
     {
-        using (bus = ConnectionHelper.GetRMQConnection())
+        // Wait for RabbitMQ to start
+        Thread.Sleep(10000);
+        using (bus = ConnectionHelper.GetRmqConnection())
         {
             // Listen for addition and subtraction events
             bus.PubSub.Subscribe<AdditionReceiveResultEvent>("History.Addition.ReceiveResult", HandleAdditionEvent);
@@ -41,7 +44,8 @@ public class MessageListener
     private void HandleAdditionEvent(AdditionReceiveResultEvent additionEvent)
     {
         // Extract the parent context from the event
-        var parentContext = ExtractData(propagator, additionEvent);
+        var parentContext = _propagator.Extract(default, additionEvent.Headers,
+            (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
         
         Baggage.Current = parentContext.Baggage;
 
@@ -55,7 +59,8 @@ public class MessageListener
         
         var calculationHistory = new Calculation
         {
-            Operands = additionEvent.Operands,
+            Operand1 = additionEvent.Operand1,
+            Operand2 = additionEvent.Operand2,
             Result = additionEvent.Result,
             Operator = Operators.Addition
         };
@@ -63,19 +68,20 @@ public class MessageListener
         var added = calculationHistoryRepo?.Add(calculationHistory);
 
         if (added is not null)
-        {
-            Log.Logger.Debug("Added calculation to database: {CalculationHistory}", added);
+        { 
+            MonitoringService.Log.Debug("Added calculation to database: {CalculationHistory}", added);
         }
         else
         {
-            Log.Logger.Error("Could not add calculation to database, {calculationHistory}", calculationHistory);
+            MonitoringService.Log.Error("Could not add calculation to database, {calculationHistory}", calculationHistory);
         }
     }
     
     private void HandleSubtractionEvent(SubtractionReceiveResultEvent subtractionEvent)
     {
         // Extract the parent context from the event
-        var parentContext = ExtractData(propagator, subtractionEvent);
+        var parentContext = _propagator.Extract(default, subtractionEvent.Headers,
+            (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
         
         Baggage.Current = parentContext.Baggage;
 
@@ -89,7 +95,8 @@ public class MessageListener
         
         var calculationHistory = new Calculation
         {
-            Operands = subtractionEvent.Operands,
+            Operand1 = subtractionEvent.Operand1,
+            Operand2 = subtractionEvent.Operand2,
             Result = subtractionEvent.Result,
             Operator = Operators.Addition
         };
@@ -98,32 +105,10 @@ public class MessageListener
 
         if (added is not null)
         {
-            Log.Logger.Debug("Added calculation to database: {CalculationHistory}", added);
         }
         else
         {
-            Log.Logger.Error("Could not add calculation to database, {calculationHistory}", calculationHistory);
-        }
-    }
-    
-    private static PropagationContext ExtractData(TraceContextPropagator propagator, object e)
-    {
-        switch (e)
-        {
-            case SubtractionReceiveResultEvent subtractionEvent:
-            {
-                var parentContext = propagator.Extract(default, subtractionEvent.Headers,
-                    (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
-                return parentContext;
-            }
-            case AdditionReceiveResultEvent additionEvent:
-            {
-                var parentContext = propagator.Extract(default, additionEvent.Headers,
-                    (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
-                return parentContext;
-            }
-            default:
-                throw new ArgumentException("Invalid event type");
+            MonitoringService.Log.Error("Could not add calculation to database, {calculationHistory}", calculationHistory);
         }
     }
 }

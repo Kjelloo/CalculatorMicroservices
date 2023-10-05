@@ -1,42 +1,90 @@
 ﻿version: '3.7'
 
 services:
-  additionservice:
-    image: ${DOCKER_REGISTRY-}addition-service
-    build:
-      context: .
-      dockerfile: AdditionService/Dockerfile
-  calculationHistoryApi:
-    image: ${DOCKER_REGISTRY-}calculation-history-api
-    build:
-      context: .
-      dockerfile: CalculationHistoryApi/Dockerfile
-  subtractionservice:
-    image: ${DOCKER_REGISTRY-}subtraction-service
-    build:
-      context: .
-      dockerfile: SubtractionService/Dockerfile
-
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:management
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=application
+      - RABBITMQ_DEFAULT_PASS=password
     ports:
-      - "15673:15672"
-    volumes:
-      - rps_rmq_data:/var/lib/rabbitmq
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - calcnetwork
+
   seq:
     image: datalust/seq
     ports:
-      - 5341:5341
-      - 5342:80
+      - "5341:5341"
+      - "5342:80"
     volumes:
-        - rps_seq_data:/data
+      - calc_seq_data:/data
     environment:
-        - ACCEPT_EULA=Y
+      - ACCEPT_EULA=Y
+    networks:
+      - calcnetwork
+
   zipkin:
     image: openzipkin/zipkin
     ports:
-      - 9411:9411
-  
-volumes: 
-    rps_seq_data:
-    rps_rmq_data:
+      - "9411:9411"
+    environment:
+        - STORAGE_TYPE=mysql
+        - MYSQL_HOST=zipkin-storage
+        - MYSQL_USER=zipkin
+        - MYSQL_PASS=zipkin
+        - MYSQL_DB=zipkin
+    depends_on: 
+      - zipkin-storage
+    networks:
+      - calcnetwork
+    
+  zipkin-storage:
+    image: openzipkin/zipkin-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - zipkin_data:/mysql/data
+    networks:
+      - calcnetwork
+        
+  addition-service:
+    build:
+      context: .
+      dockerfile: AdditionService/Dockerfile
+    deploy:
+      replicas: 3
+    networks:
+      - calcnetwork
+
+  calculation-history-api:
+    build:
+      context: .
+      dockerfile: CalculationHistoryApi/Dockerfile
+    networks:
+      - calcnetwork
+
+  subtraction-service:
+    build:
+      context: .
+      dockerfile: SubtractionService/Dockerfile
+    deploy:
+      replicas: 3
+    networks:
+      - calcnetwork
+
+  calculation-api:
+    build:
+      context: .
+      dockerfile: CalculationApi/Dockerfile
+    networks:
+      - calcnetwork
+
+volumes:
+  calc_seq_data:
+  zipkin_data:
+
+networks:
+  calcnetwork:
+    driver: bridge

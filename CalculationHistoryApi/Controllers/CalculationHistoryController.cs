@@ -1,5 +1,5 @@
 using CalculationHistoryApi.Data.Database;
-using CalculationHistoryService.Data.Models;
+using CalculationHistoryApi.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalculationHistoryApi.Controllers

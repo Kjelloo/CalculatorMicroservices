@@ -2,10 +2,10 @@
 
 namespace SharedModels.Helpers;
 
-public class ConnectionHelper
+public static class ConnectionHelper
 {
-    public static IBus GetRMQConnection()
+    public static IBus GetRmqConnection()
     {
-        return RabbitHutch.CreateBus("host=localhost;username=application;password=password");
+        return RabbitHutch.CreateBus("host=rabbitmq;username=application;password=password");
     }
 }

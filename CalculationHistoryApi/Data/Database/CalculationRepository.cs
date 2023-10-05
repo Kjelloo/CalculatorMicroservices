@@ -1,4 +1,4 @@
-﻿using CalculationHistoryService.Data.Models;
+﻿using CalculationHistoryApi.Data.Models;
 
 namespace CalculationHistoryApi.Data.Database;
 

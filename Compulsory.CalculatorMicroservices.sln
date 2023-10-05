@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitoring", "Monitoring\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationHistoryApi", "CalculationHistoryApi\CalculationHistoryApi.csproj", "{D0E27306-1719-4408-84EF-282985133A24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationApi", "CalculationApi\CalculationApi.csproj", "{AB492F0E-45A0-46AE-B5B5-E75AA78E520F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{D0E27306-1719-4408-84EF-282985133A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E27306-1719-4408-84EF-282985133A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E27306-1719-4408-84EF-282985133A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB492F0E-45A0-46AE-B5B5-E75AA78E520F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB492F0E-45A0-46AE-B5B5-E75AA78E520F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB492F0E-45A0-46AE-B5B5-E75AA78E520F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB492F0E-45A0-46AE-B5B5-E75AA78E520F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

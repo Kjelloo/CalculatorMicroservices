@@ -1,8 +1,12 @@
-﻿namespace CalculationHistoryService.Data.Models;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace CalculationHistoryApi.Data.Models;
 
 public class Calculation
 {
-    public IEnumerable<decimal> Operands { get; set; }
+    public int Id { get; set; }
+    public float Operand1 { get; set; }
+    public float Operand2 { get; set; }
     public Operators Operator { get; set; }
-    public decimal Result { get; set; }
+    public float Result { get; set; }
 }

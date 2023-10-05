@@ -71,6 +71,10 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -133,11 +137,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "OpenTelemetry": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[1.6.0, )"
+              "version": "[13.0.3, )"
             },
-            "OpenTelemetry.Api": {
+            "OpenTelemetry": {
               "target": "Package",
               "version": "[1.6.0, )"
             },
@@ -163,7 +167,7 @@
             },
             "Serilog.Sinks.Seq": {
               "target": "Package",
-              "version": "[5.2.2, )"
+              "version": "[5.2.3, )"
             }
           },
           "imports": [
@@ -223,6 +227,10 @@
             "EasyNetQ": {
               "target": "Package",
               "version": "[7.5.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

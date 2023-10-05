@@ -177,6 +177,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "OpenTelemetry/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -357,7 +370,7 @@
           }
         }
       },
-      "Serilog.Sinks.Seq/5.2.2": {
+      "Serilog.Sinks.Seq/5.2.3": {
         "type": "package",
         "dependencies": {
           "Serilog": "2.12.0",
@@ -597,6 +610,36 @@
         "packageIcon.png"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "OpenTelemetry/1.6.0": {
       "sha512": "bTvLk9YIg0nUDb6K+f8mJkMK8b7sfGEyD0Zmg6ckD7kDCkBq1Hk1KjqlA/jEsypJIVnyclP0CGDcOELGYXGpAA==",
       "type": "package",
@@ -823,10 +866,10 @@
         "serilog.sinks.periodicbatching.nuspec"
       ]
     },
-    "Serilog.Sinks.Seq/5.2.2": {
-      "sha512": "1Csmo5ua7NKUe0yXUx+zsRefjAniPWcXFhUXxXG8pwo0iMiw2gjn9SOkgYnnxbgWqmlGv236w0N/dHc2v5XwMg==",
+    "Serilog.Sinks.Seq/5.2.3": {
+      "sha512": "oQzJkLwpoWm1Jn26D6Rx7s55diIx4+YHMAZhtuFstF/v/FivzNzz8K7h9sOHLTSFYuVOx01inlyCpekGeBALNg==",
       "type": "package",
-      "path": "serilog.sinks.seq/5.2.2",
+      "path": "serilog.sinks.seq/5.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -843,7 +886,7 @@
         "lib/netstandard1.3/Serilog.Sinks.Seq.xml",
         "lib/netstandard2.0/Serilog.Sinks.Seq.dll",
         "lib/netstandard2.0/Serilog.Sinks.Seq.xml",
-        "serilog.sinks.seq.5.2.2.nupkg.sha512",
+        "serilog.sinks.seq.5.2.3.nupkg.sha512",
         "serilog.sinks.seq.nuspec"
       ]
     },
@@ -923,14 +966,14 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Newtonsoft.Json >= 13.0.3",
       "OpenTelemetry >= 1.6.0",
-      "OpenTelemetry.Api >= 1.6.0",
       "OpenTelemetry.Exporter.Console >= 1.6.0",
       "OpenTelemetry.Exporter.Zipkin >= 1.6.0",
       "Serilog >= 3.0.1",
       "Serilog.Enrichers.Span >= 3.1.0",
       "Serilog.Sinks.Console >= 4.1.0",
-      "Serilog.Sinks.Seq >= 5.2.2"
+      "Serilog.Sinks.Seq >= 5.2.3"
     ]
   },
   "packageFolders": {
@@ -970,11 +1013,11 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "OpenTelemetry": {
+          "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[1.6.0, )"
+            "version": "[13.0.3, )"
           },
-          "OpenTelemetry.Api": {
+          "OpenTelemetry": {
             "target": "Package",
             "version": "[1.6.0, )"
           },
@@ -1000,7 +1043,7 @@
           },
           "Serilog.Sinks.Seq": {
             "target": "Package",
-            "version": "[5.2.2, )"
+            "version": "[5.2.3, )"
           }
         },
         "imports": [

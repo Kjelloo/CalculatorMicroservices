@@ -1,13 +1,14 @@
-﻿using Serilog;
+﻿using Monitoring;
+using Serilog;
 
 namespace SubtractionService;
 
 public class SubtractService
 {
-    public decimal Subtract(IEnumerable<decimal> operands)
+    public float Subtract(float operand1, float operand2)
     {
-        var result = operands.Aggregate((total, next) => total - next);
-        Log.Logger.Debug("Finished subtraction with result {Result}", result);
+        var result = operand1 - operand2;
+        MonitoringService.Log.Debug("Finished subtraction with result {Result}", result);
         return result;
     }
 }

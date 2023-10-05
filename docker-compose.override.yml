@@ -1,9 +1,15 @@
 version: '3.8'
 
 services:
-  calculationHistoryApi:
+  calculation-history-api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
     ports:
       - "5080:80"
+  calculation-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "5180:80"

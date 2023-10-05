@@ -1,4 +1,4 @@
-﻿namespace CalculationHistoryService.Data.Models;
+﻿namespace CalculationHistoryApi.Data.Models;
 
 public enum Operators
 {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/JG6mnc3yTeN6YnsgYgDH5zYIz8U5pxAuFJlv7R80TTi8al7A3gZgVnNMq60R4Qbxw4U+fhwm4B8SjhBWgdvaA==",
+  "dgSpecHash": "0gHO9OF6RSUR8Ucs0R4tjhWytRcLHWmmkB0T88GC7pNKdgxrfp6rgHg3hy6/+Ub36cu6/WCvjBE690D8HzpZKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\CalculationHistoryApi\\CalculationHistoryApi.csproj",
   "expectedPackageFiles": [
@@ -109,7 +109,7 @@
     "C:\\Users\\kjell\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\kjell\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",
@@ -147,7 +147,7 @@
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.periodicbatching\\3.1.0\\serilog.sinks.periodicbatching.3.1.0.nupkg.sha512",
-    "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.seq\\5.2.2\\serilog.sinks.seq.5.2.2.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\serilog.sinks.seq\\5.2.3\\serilog.sinks.seq.5.2.3.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

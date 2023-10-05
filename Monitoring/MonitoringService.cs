@@ -8,27 +8,28 @@ using Serilog.Enrichers.Span;
 
 namespace Monitoring;
 
-public class MonitoringService
+public static class MonitoringService
 {
-    public static readonly ActivitySource ActivitySource = new("Calculator");
-    private static TracerProvider _tracerProvider;
+    public static readonly string ServiceName = Assembly.GetCallingAssembly().GetName().Name ?? "Unknown";
+    public static readonly ActivitySource ActivitySource = new(ServiceName);
+    private static TracerProvider TracerProvider;
+    public static ILogger Log => Serilog.Log.Logger;
 
     static MonitoringService()
     {
-        var serviceName = Assembly.GetExecutingAssembly().GetName().Name;
-        
-        _tracerProvider = Sdk.CreateTracerProviderBuilder()
-            .AddZipkinExporter()
+        TracerProvider = Sdk.CreateTracerProviderBuilder()
+            .AddZipkinExporter(options => options.Endpoint = new Uri("http://zipkin:9411/api/v2/spans"))
             .AddConsoleExporter()
             .AddSource(ActivitySource.Name)
-            .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(serviceName: serviceName))
-            .Build();
+            .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(ServiceName))
+            .Build()!;
         
-        Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
-            .Enrich.WithSpan()
-            .WriteTo.Seq("http://localhost:5341")
+        // Configure logging
+        Serilog.Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Verbose()
+            .WriteTo.Seq("http://seq:5341")
             .WriteTo.Console()
+            .Enrich.WithSpan()
             .CreateLogger();
     }
 }

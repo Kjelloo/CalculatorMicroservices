@@ -3,8 +3,15 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
+COPY ["SharedModels/SharedModels.csproj", "SharedModels/"]
+RUN dotnet restore "SharedModels/SharedModels.csproj"
+
+COPY ["Monitoring/Monitoring.csproj", "Monitoring/"]
+RUN dotnet restore "Monitoring/Monitoring.csproj"
+
 COPY ["AdditionService/AdditionService.csproj", "AdditionService/"]
 RUN dotnet restore "AdditionService/AdditionService.csproj"
+
 COPY . .
 WORKDIR "/src/AdditionService"
 RUN dotnet build "AdditionService.csproj" -c Release -o /app/build

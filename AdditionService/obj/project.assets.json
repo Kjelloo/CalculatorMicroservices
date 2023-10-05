@@ -403,7 +403,7 @@
           }
         }
       },
-      "Serilog.Sinks.Seq/5.2.2": {
+      "Serilog.Sinks.Seq/5.2.3": {
         "type": "package",
         "dependencies": {
           "Serilog": "2.12.0",
@@ -493,14 +493,14 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
           "OpenTelemetry": "1.6.0",
-          "OpenTelemetry.Api": "1.6.0",
           "OpenTelemetry.Exporter.Console": "1.6.0",
           "OpenTelemetry.Exporter.Zipkin": "1.6.0",
           "Serilog": "3.0.1",
           "Serilog.Enrichers.Span": "3.1.0",
           "Serilog.Sinks.Console": "4.1.0",
-          "Serilog.Sinks.Seq": "5.2.2"
+          "Serilog.Sinks.Seq": "5.2.3"
         },
         "compile": {
           "bin/placeholder/Monitoring.dll": {}
@@ -513,7 +513,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "EasyNetQ": "7.5.5"
+          "EasyNetQ": "7.5.5",
+          "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
           "bin/placeholder/SharedModels.dll": {}
@@ -989,10 +990,10 @@
         "serilog.sinks.periodicbatching.nuspec"
       ]
     },
-    "Serilog.Sinks.Seq/5.2.2": {
-      "sha512": "1Csmo5ua7NKUe0yXUx+zsRefjAniPWcXFhUXxXG8pwo0iMiw2gjn9SOkgYnnxbgWqmlGv236w0N/dHc2v5XwMg==",
+    "Serilog.Sinks.Seq/5.2.3": {
+      "sha512": "oQzJkLwpoWm1Jn26D6Rx7s55diIx4+YHMAZhtuFstF/v/FivzNzz8K7h9sOHLTSFYuVOx01inlyCpekGeBALNg==",
       "type": "package",
-      "path": "serilog.sinks.seq/5.2.2",
+      "path": "serilog.sinks.seq/5.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1009,7 +1010,7 @@
         "lib/netstandard1.3/Serilog.Sinks.Seq.xml",
         "lib/netstandard2.0/Serilog.Sinks.Seq.dll",
         "lib/netstandard2.0/Serilog.Sinks.Seq.xml",
-        "serilog.sinks.seq.5.2.2.nupkg.sha512",
+        "serilog.sinks.seq.5.2.3.nupkg.sha512",
         "serilog.sinks.seq.nuspec"
       ]
     },

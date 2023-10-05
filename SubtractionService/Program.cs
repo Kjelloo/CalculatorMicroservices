@@ -4,64 +4,58 @@ using EasyNetQ;
 using Monitoring;
 using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
+using Serilog;
 using SharedModels.Events;
 using SharedModels.Helpers;
-using SubtractionService.Events;
 
 namespace SubtractionService;
 
 public static class Program
 {
-    public static async Task Main()
+    public static void Main(string[] args)
     {
         var subtractionService = new SubtractService();
         var propagator = new TraceContextPropagator();
         var spinLock = new object();
+
+        // Wait for RabbitMQ to start
+        Thread.Sleep(10000);
+        using var bus = ConnectionHelper.GetRmqConnection();
         
-        using (var bus = ConnectionHelper.GetRMQConnection())
+        MonitoringService.Log.Debug("Subtraction service running: {service}", typeof(Program).Assembly.GetName().Name);
+            
+        bus.PubSub.SubscribeAsync<SubtractionEvent>("SubtractionService.HandleCalculation", e =>
         {
-            bus.PubSub.SubscribeAsync<SubtractionEvent>("subtraction.handleCalculation", e =>
-            {
-                var parentContext = ExtractData(propagator, e);
-                Baggage.Current = parentContext.Baggage;
+            var parentContext = propagator.Extract(default, e.Headers,
+                (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
+            Baggage.Current = parentContext.Baggage;
 
-                using (var activity =
-                       MonitoringService.ActivitySource.StartActivity("SubtractionService", ActivityKind.Consumer,
-                           parentContext.ActivityContext))
+            using (var activity =
+                   MonitoringService.ActivitySource.StartActivity("SubtractionService", ActivityKind.Consumer,
+                       parentContext.ActivityContext))
+            {
+                var result = new SubtractionReceiveResultEvent
                 {
-                    var result = new SubtractionReceiveResultEvent
-                    {
-                        Result = subtractionService.Subtract(e.Operands)
-                    };
+                    Operand1 = e.Operand1,
+                    Operand2 = e.Operand2,
+                    Result = subtractionService.Subtract(e.Operand1, e.Operand2),
+                    DateTime = e.DateTime
+                };
 
-                    var activityContext = activity?.Context ?? Activity.Current?.Context ?? default;
+                var activityContext = activity?.Context ?? Activity.Current?.Context ?? default;
+                
+                propagator.Inject(
+                    new PropagationContext(activityContext, Baggage.Current),
+                    result,
+                    (r, key, value) => { r.Headers.Add(key, value); });
 
-                    InjectData(propagator, activityContext, result);
-
-                    bus.PubSub.PublishAsync(result);
-                }
-            });
-
-            lock (spinLock)
-            {
-                Monitor.Wait(spinLock);
+                bus.PubSub.PublishAsync(result);
             }
-        }
-    }
+        });
 
-    private static void InjectData(TraceContextPropagator propagator, ActivityContext activityContext,
-        SubtractionReceiveResultEvent data)
-    {
-        propagator.Inject(
-            new PropagationContext(activityContext, Baggage.Current),
-            data,
-            (r, key, value) => { r.Headers.Add(key, value); });
-    }
-    
-    private static PropagationContext ExtractData(TraceContextPropagator propagator, SubtractionEvent e)
-    {
-        var parentContext = propagator.Extract(default, e.Headers,
-            (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
-        return parentContext;
+        lock (spinLock)
+        {
+            Monitor.Wait(spinLock);
+        }
     }
 }
