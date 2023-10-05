@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0gHO9OF6RSUR8Ucs0R4tjhWytRcLHWmmkB0T88GC7pNKdgxrfp6rgHg3hy6/+Ub36cu6/WCvjBE690D8HzpZKw==",
+  "dgSpecHash": "rl+u2HLXQuae31mFETC6Po4ZG06y/LDF+yECneIG6vHt/r0Tv8YookkyrPQzc6h+RglV4MsRel5cEfXOxGyO6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\CalculationHistoryApi\\CalculationHistoryApi.csproj",
   "expectedPackageFiles": [
@@ -124,6 +124,8 @@
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.api.providerbuilderextensions\\1.6.0\\opentelemetry.api.providerbuilderextensions.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.exporter.console\\1.6.0\\opentelemetry.exporter.console.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.exporter.zipkin\\1.6.0\\opentelemetry.exporter.zipkin.1.6.0.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\polly\\8.0.0\\polly.8.0.0.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\polly.core\\8.0.0\\polly.core.8.0.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\rabbitmq.client\\6.5.0\\rabbitmq.client.6.5.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

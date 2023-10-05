@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ito3y5HYM7y/RwOI+2lxNKvS1sPwIa/ANlWFLHfdwt9marFP8f1xeEri+el6fzjsnNyb+mBa/8Y45v9COLe7hA==",
+  "dgSpecHash": "MdUJnZnNa7f1m4yJh187S0rYGdp5Rkd5TWrNsW2i7owInQeqXQInsQpXyUbcGVqnMD0tT9TeEbawxOtyYXFSPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kjell\\Documents\\Programming\\School\\DLS\\Compulsories\\Compulsory.CalculatorMicroservices\\SubtractionService\\SubtractionService.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,8 @@
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.api.providerbuilderextensions\\1.6.0\\opentelemetry.api.providerbuilderextensions.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.exporter.console\\1.6.0\\opentelemetry.exporter.console.1.6.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\opentelemetry.exporter.zipkin\\1.6.0\\opentelemetry.exporter.zipkin.1.6.0.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\polly\\8.0.0\\polly.8.0.0.nupkg.sha512",
+    "C:\\Users\\kjell\\.nuget\\packages\\polly.core\\8.0.0\\polly.core.8.0.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\rabbitmq.client\\6.5.0\\rabbitmq.client.6.5.0.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
     "C:\\Users\\kjell\\.nuget\\packages\\serilog.enrichers.span\\3.1.0\\serilog.enrichers.span.3.1.0.nupkg.sha512",

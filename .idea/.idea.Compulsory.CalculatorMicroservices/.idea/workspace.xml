@@ -19,27 +19,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ea0d16d-9d36-465e-9a8f-49a0ffc404f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebUi/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/calculator.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/calculator/calculator.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/calculator/calculator.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/calculator/calculator.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/shared/models/Calculation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/shared/models/CalculationRequest.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebUi/src/app/shared/models/OperatorDto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compulsory.CalculatorMicroservices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compulsory.CalculatorMicroservices/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/AdditionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/AdditionService.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdditionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/AdditionService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/AdditionService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/Debug/net7.0/AdditionService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/Debug/net7.0/AdditionService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/Debug/net7.0/AdditionService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/Debug/net7.0/AdditionService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationApi/CalculationApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationApi/CalculationApi.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculationApi/Controllers/CalculatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationApi/Controllers/CalculatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationApi/Data/Models/CalculationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationApi/Data/Models/CalculationRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/Data/Models/Calculation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Models/Calculation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/Infrastructure/MessageListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Infrastructure/MessageListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/CalculationHistoryApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/CalculationHistoryApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/CalculationHistoryApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/CalculationHistoryApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/Debug/net7.0/CalculationHistoryApi.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monitoring/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Monitoring/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SubtractionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebUi/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebUi/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebUi/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebUi/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebUi/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/WebUi/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/SubtractionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/SubtractionService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/Debug/net7.0/SubtractionService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/Debug/net7.0/SubtractionService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/Debug/net7.0/SubtractionService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/Debug/net7.0/SubtractionService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/SubtractionService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/SubtractionService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
