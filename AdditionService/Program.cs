@@ -3,7 +3,7 @@ using EasyNetQ;
 using Monitoring;
 using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
-using Serilog;
+using Polly;
 using SharedModels.Events;
 using SharedModels.Helpers;
 
@@ -16,6 +16,16 @@ public static class Program
         var subtractionService = new AddService();
         var propagator = new TraceContextPropagator();
         var spinLock = new object();
+        
+        var retryPolicy = Policy
+            .Handle<Exception>()
+            .WaitAndRetry(
+                3,
+                retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), // Increases time between tries
+                (exception, timeSpan, retryCount) =>
+                {
+                    MonitoringService.Log.Error($"Exception when publishing message from addition service: {exception.Message} - Retrying after {timeSpan.TotalSeconds} seconds. Retry count: {retryCount}");
+                });
 
         MonitoringService.Log.Debug("Waiting for rabbitmq to start in addition service");
         
@@ -27,12 +37,12 @@ public static class Program
         
         bus.PubSub.SubscribeAsync<AdditionEvent>("AdditionService.HandleCalculation", e =>
         {
-            MonitoringService.Log.Debug("Received addition event: {additionEvent}", e);
-            
             var parentContext = propagator.Extract(default, e.Headers,
                 (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
                 
             Baggage.Current = parentContext.Baggage;
+            
+            MonitoringService.Log.Debug("Received addition event: {additionEvent}", e);
 
             using (var activity =
                    MonitoringService.ActivitySource.StartActivity("AdditionService", ActivityKind.Consumer,
@@ -52,9 +62,13 @@ public static class Program
                     new PropagationContext(activityContext, Baggage.Current),
                     result,
                     (r, key, value) => { r.Headers.Add(key, value); });
-
+                
+                retryPolicy.Execute(() =>
+                {
+                    bus.PubSub.PublishAsync(result);
+                });
+                
                 MonitoringService.Log.Debug("Sending addition result event: {additionReceiveResultEvent}", result);
-                bus.PubSub.PublishAsync(result);
             }
         });
 

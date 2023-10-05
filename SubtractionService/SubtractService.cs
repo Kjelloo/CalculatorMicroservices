@@ -1,5 +1,4 @@
 ﻿using Monitoring;
-using Serilog;
 
 namespace SubtractionService;
 
