@@ -60,7 +60,10 @@ namespace CalculationApi.Controllers
 
                     Log.Logger.Debug("AdditionEvent created: {additionEvent}", additionEvent);
 
-                    bus.PubSub.PublishAsync(additionEvent);
+                    _retryPolicyAddition.Execute(() =>
+                    {
+                        bus.PubSub.PublishAsync(additionEvent);
+                    });
 
                     var spinLockAdd = new object();
 
@@ -69,12 +72,14 @@ namespace CalculationApi.Controllers
                         {
                             result = message.Result;
 
+                            // Release the lock
                             lock (spinLockAdd)
                             {
                                 Monitor.Pulse(spinLockAdd);
                             }
                         });
 
+                    // Wait for the result to be received
                     lock (spinLockAdd)
                     {
                         Monitor.Wait(spinLockAdd);
@@ -89,7 +94,10 @@ namespace CalculationApi.Controllers
                         Operand2 = request.Operand2
                     };
 
-                    bus.PubSub.PublishAsync(subtractionEvent);
+                    _retryPolicySubtraction.Execute(() =>
+                    {
+                        bus.PubSub.PublishAsync(subtractionEvent);
+                    });
                     
                     var spinLockSub = new object();
 
@@ -113,7 +121,7 @@ namespace CalculationApi.Controllers
                 default:
                     return BadRequest("Operator not supported");
 
-                // TODO: Implement multiple operator calculation
+                // TODO: Implement other operator calculations
             }
             return Ok(result);
         }
