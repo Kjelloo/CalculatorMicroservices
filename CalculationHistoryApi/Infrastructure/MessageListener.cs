@@ -43,6 +43,8 @@ public class MessageListener
     
     private void HandleAdditionEvent(AdditionReceiveResultEvent additionEvent)
     {
+        MonitoringService.Log.Debug("Received addition event: {AdditionEvent}", additionEvent.ToString());
+        
         // Extract the parent context from the event
         var parentContext = _propagator.Extract(default, additionEvent.Headers,
             (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
@@ -69,16 +71,18 @@ public class MessageListener
 
         if (added is not null)
         { 
-            MonitoringService.Log.Debug("Added calculation to database: {CalculationHistory}", added);
+            MonitoringService.Log.Debug("Added calculation to database: {CalculationHistory}", added.ToString());
         }
         else
         {
-            MonitoringService.Log.Error("Could not add calculation to database, {calculationHistory}", calculationHistory);
+            MonitoringService.Log.Error("Could not add calculation to database, {calculationHistory}", calculationHistory.ToString());
         }
     }
     
     private void HandleSubtractionEvent(SubtractionReceiveResultEvent subtractionEvent)
     {
+        MonitoringService.Log.Debug("Received subtraction event: {SubtractionEvent}", subtractionEvent.ToString());
+        
         // Extract the parent context from the event
         var parentContext = _propagator.Extract(default, subtractionEvent.Headers,
             (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
@@ -98,17 +102,18 @@ public class MessageListener
             Operand1 = subtractionEvent.Operand1,
             Operand2 = subtractionEvent.Operand2,
             Result = subtractionEvent.Result,
-            Operator = Operators.Addition
+            Operator = Operators.Subtraction
         };
 
         var added = calculationHistoryRepo?.Add(calculationHistory);
 
         if (added is not null)
         {
+            MonitoringService.Log.Debug("Added calculation to database: {CalculationHistory}", added.ToString());
         }
         else
         {
-            MonitoringService.Log.Error("Could not add calculation to database, {calculationHistory}", calculationHistory);
+            MonitoringService.Log.Error("Could not add calculation to database, {calculationHistory}", calculationHistory.ToString());
         }
     }
 }

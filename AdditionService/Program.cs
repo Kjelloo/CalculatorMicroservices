@@ -17,14 +17,18 @@ public static class Program
         var propagator = new TraceContextPropagator();
         var spinLock = new object();
 
+        MonitoringService.Log.Debug("Waiting for rabbitmq to start in addition service");
+        
         // Wait for RabbitMQ to start
         Thread.Sleep(10000);
         using var bus = ConnectionHelper.GetRmqConnection();
         
-        MonitoringService.Log.Debug("Addition service running: {service}", typeof(Program).Assembly.GetName().Name);
+        MonitoringService.Log.Debug("Addition service running...");
         
         bus.PubSub.SubscribeAsync<AdditionEvent>("AdditionService.HandleCalculation", e =>
         {
+            MonitoringService.Log.Debug("Received addition event: {additionEvent}", e);
+            
             var parentContext = propagator.Extract(default, e.Headers,
                 (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
                 
@@ -49,6 +53,7 @@ public static class Program
                     result,
                     (r, key, value) => { r.Headers.Add(key, value); });
 
+                MonitoringService.Log.Debug("Sending addition result event: {additionReceiveResultEvent}", result);
                 bus.PubSub.PublishAsync(result);
             }
         });

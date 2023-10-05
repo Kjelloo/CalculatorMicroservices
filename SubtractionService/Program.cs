@@ -4,7 +4,6 @@ using EasyNetQ;
 using Monitoring;
 using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
-using Serilog;
 using SharedModels.Events;
 using SharedModels.Helpers;
 
@@ -19,13 +18,16 @@ public static class Program
         var spinLock = new object();
 
         // Wait for RabbitMQ to start
+        MonitoringService.Log.Debug("Waiting for rabbitmq to start");
         Thread.Sleep(10000);
         using var bus = ConnectionHelper.GetRmqConnection();
         
-        MonitoringService.Log.Debug("Subtraction service running: {service}", typeof(Program).Assembly.GetName().Name);
+        MonitoringService.Log.Debug("Subtraction service running...");
             
         bus.PubSub.SubscribeAsync<SubtractionEvent>("SubtractionService.HandleCalculation", e =>
         {
+            MonitoringService.Log.Debug("Received subtraction event: {SubtractionEvent}", e);
+            
             var parentContext = propagator.Extract(default, e.Headers,
                 (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
             Baggage.Current = parentContext.Baggage;
@@ -49,6 +51,7 @@ public static class Program
                     result,
                     (r, key, value) => { r.Headers.Add(key, value); });
 
+                MonitoringService.Log.Debug("Sending subtraction result event: {SubtractionReceiveResultEvent}", result);
                 bus.PubSub.PublishAsync(result);
             }
         });

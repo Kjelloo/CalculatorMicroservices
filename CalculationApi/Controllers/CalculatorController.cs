@@ -1,12 +1,11 @@
-using System.Globalization;
 using CalculationApi.Data.Models;
 using EasyNetQ;
 using Microsoft.AspNetCore.Mvc;
-using Monitoring;
 using Serilog;
 using SharedModels.Events;
 using SharedModels.Helpers;
 using SharedModels.Models;
+
 namespace CalculationApi.Controllers
 {
     [Route("api/[controller]")]
@@ -20,7 +19,6 @@ namespace CalculationApi.Controllers
             
             using var bus = ConnectionHelper.GetRmqConnection();
             
-            MonitoringService.Log.Debug("Bus: {bus}", bus);
             switch (request.Operator)
             {
                 // Check if the operator is addition
@@ -28,8 +26,7 @@ namespace CalculationApi.Controllers
                     var additionEvent = new AdditionEvent
                     {
                         Operand1 = request.Operand1,
-                        Operand2 = request.Operand2,
-                        DateTime = request.DateTime.ToString(CultureInfo.CurrentCulture)
+                        Operand2 = request.Operand2
                     };
 
                     Log.Logger.Debug("AdditionEvent created: {additionEvent}", additionEvent);
@@ -60,8 +57,7 @@ namespace CalculationApi.Controllers
                     var subtractionEvent = new SubtractionEvent
                     {
                         Operand1 = request.Operand1,
-                        Operand2 = request.Operand2,
-                        DateTime = request.DateTime.ToString(CultureInfo.CurrentCulture)
+                        Operand2 = request.Operand2
                     };
 
                     bus.PubSub.PublishAsync(subtractionEvent);

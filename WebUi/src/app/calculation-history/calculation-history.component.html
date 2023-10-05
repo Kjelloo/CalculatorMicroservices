@@ -1,0 +1,11 @@
+<h2>Calculation History</h2>
+<button (click)="refreshCalculations()">Refresh History</button>
+<ul>
+  <li *ngFor="let calculation of calculations">
+    {{ calculation.operand1 }}
+    <span *ngIf="calculation.operator === 0">+</span>
+    <span *ngIf="calculation.operator === 1">-</span>
+    {{ calculation.operand2 }} = {{ calculation.result }}
+  </li>
+</ul>
+

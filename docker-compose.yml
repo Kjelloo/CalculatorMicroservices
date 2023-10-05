@@ -81,6 +81,16 @@ services:
     networks:
       - calcnetwork
 
+  web-ui:
+    image: angular
+    build:
+      context: WebUi/
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    networks:
+      - calcnetwork
+
 volumes:
   calc_seq_data:
   zipkin_data:

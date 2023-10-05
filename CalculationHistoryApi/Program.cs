@@ -7,6 +7,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builderCors =>
+        {
+            builderCors.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddDbContext<CalculationHistoryContext>(opt => opt.UseInMemoryDatabase("CalculationHistoryDb"));
 
 builder.Services.AddScoped<IRepository<Calculation>, CalculationRepository>();
@@ -39,6 +50,14 @@ using (var scope = app.Services.CreateScope())
 Task.Factory.StartNew(() => new MessageListener(app.Services).Start());
 
 // app.UseHttpsRedirection();
+
+app.UseCors(builderCors =>
+{
+    builderCors
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+});
 
 app.UseAuthorization();
 
