@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using EasyNetQ;
 using Monitoring;
@@ -29,15 +30,15 @@ public static class Program
                 });
 
         // Wait for RabbitMQ to start
-        MonitoringService.Log.Debug("Waiting for rabbitmq to start");
-        Thread.Sleep(10000);
+        MonitoringService.Log.Debug("Waiting for rabbitmq to start in subtraction service: {subtractionServiceName}", Assembly.GetCallingAssembly().GetName().Name);
+        Thread.Sleep(15000);
         using var bus = ConnectionHelper.GetRmqConnection();
         
         MonitoringService.Log.Debug("Subtraction service running...");
             
         bus.PubSub.SubscribeAsync<SubtractionEvent>("SubtractionService.HandleCalculation", e =>
         {
-            MonitoringService.Log.Debug("Received subtraction event: {SubtractionEvent}", e);
+            MonitoringService.Log.Debug("Received subtraction event: {SubtractionEvent}", e.ToString());
             
             var parentContext = propagator.Extract(default, e.Headers,
                 (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
@@ -51,8 +52,7 @@ public static class Program
                 {
                     Operand1 = e.Operand1,
                     Operand2 = e.Operand2,
-                    Result = subtractionService.Subtract(e.Operand1, e.Operand2),
-                    DateTime = e.DateTime
+                    Result = subtractionService.Subtract(e.Operand1, e.Operand2)
                 };
 
                 var activityContext = activity?.Context ?? Activity.Current?.Context ?? default;
@@ -67,7 +67,7 @@ public static class Program
                     bus.PubSub.PublishAsync(result);
                 });
                 
-                MonitoringService.Log.Debug("Sending subtraction result event: {SubtractionReceiveResultEvent}", result);
+                MonitoringService.Log.Debug("Sending subtraction result event: {SubtractionReceiveResultEvent}", result.Result);
             }
         });
 

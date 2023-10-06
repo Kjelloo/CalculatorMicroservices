@@ -26,7 +26,7 @@ public class MessageListener
     public void Start()
     {
         // Wait for RabbitMQ to start
-        Thread.Sleep(10000);
+        Thread.Sleep(15000);
         using (bus = ConnectionHelper.GetRmqConnection())
         {
             // Listen for addition and subtraction events

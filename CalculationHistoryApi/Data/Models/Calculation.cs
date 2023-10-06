@@ -8,4 +8,9 @@ public class Calculation
     
     public Operators Operator { get; set; }
     public float Result { get; set; }
+
+    public override string ToString()
+    {
+        return Operand1 + " " + Operator + " " + Operand2 + " = " + Result;
+    }
 }

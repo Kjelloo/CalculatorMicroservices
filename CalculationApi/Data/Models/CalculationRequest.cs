@@ -10,4 +10,9 @@ public class CalculationRequest
     
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public OperatorDto Operator { get; set; }
+    
+    public override string ToString()
+    {
+        return Operand1 + " " + Operator + " " + Operand2;
+    }
 }

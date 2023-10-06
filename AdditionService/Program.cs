@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using EasyNetQ;
 using Monitoring;
 using OpenTelemetry;
@@ -28,23 +29,23 @@ public static class Program
                     MonitoringService.Log.Error($"Exception when publishing message from addition service: {exception.Message} - Retrying after {timeSpan.TotalSeconds} seconds. Retry count: {retryCount}");
                 });
 
-        MonitoringService.Log.Debug("Waiting for rabbitmq to start in addition service");
+        MonitoringService.Log.Debug("Waiting for rabbitmq to start in addition service: {additionServiceName}", Assembly.GetCallingAssembly().GetName().Name);
         
         // Wait for RabbitMQ to start
-        Thread.Sleep(10000);
+        Thread.Sleep(15000);
         using var bus = ConnectionHelper.GetRmqConnection();
         
         MonitoringService.Log.Debug("Addition service running...");
         
         bus.PubSub.SubscribeAsync<AdditionEvent>("AdditionService.HandleCalculation", e =>
         {
-            MonitoringService.Log.Debug("Received addition event: {additionEvent}", e);
+            MonitoringService.Log.Debug("Received addition event: {additionEvent}", e.ToString());
             
             var parentContext = propagator.Extract(default, e.Headers,
                 (r, key) => { return new List<string>(new[] { r.ContainsKey(key) ? r[key].ToString() : String.Empty }!); });
-                
+            
             Baggage.Current = parentContext.Baggage;
-
+            
             using (var activity =
                    MonitoringService.ActivitySource.StartActivity("AdditionService", ActivityKind.Consumer,
                        parentContext.ActivityContext))
@@ -53,8 +54,7 @@ public static class Program
                 {
                     Operand1 = e.Operand1,
                     Operand2 = e.Operand2,
-                    Result = subtractionService.Addition(e.Operand1, e.Operand2),
-                    DateTime = e.DateTime
+                    Result = subtractionService.Addition(e.Operand1, e.Operand2)
                 };
 
                 var activityContext = activity?.Context ?? Activity.Current?.Context ?? default;
@@ -69,7 +69,7 @@ public static class Program
                     bus.PubSub.PublishAsync(result);
                 });
                 
-                MonitoringService.Log.Debug("Sending addition result event: {additionReceiveResultEvent}", result);
+                MonitoringService.Log.Debug("Sending addition result event: {additionReceiveResultEvent}", result.Result);
             }
         });
 

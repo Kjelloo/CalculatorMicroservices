@@ -20,7 +20,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4ea0d16d-9d36-465e-9a8f-49a0ffc404f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compulsory.CalculatorMicroservices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compulsory.CalculatorMicroservices/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/AddService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/AddService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdditionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionService/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculationApi/Controllers/CalculatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationApi/Controllers/CalculatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationApi/Data/Models/CalculationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationApi/Data/Models/CalculationRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/Data/Models/Calculation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Data/Models/Calculation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationHistoryApi/Infrastructure/MessageListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationHistoryApi/Infrastructure/MessageListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monitoring/MonitoringService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Monitoring/MonitoringService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedModels/Events/AdditionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModels/Events/AdditionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedModels/Events/AdditionReceiveResultEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModels/Events/AdditionReceiveResultEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedModels/Events/SubtractionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModels/Events/SubtractionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedModels/Events/SubtractionReceiveResultEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedModels/Events/SubtractionReceiveResultEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubtractionService/SubtractService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SubtractionService/SubtractService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
